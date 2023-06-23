@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-package jwt;
+package org.ifinalframework.security.jwt;
 
 import java.util.Arrays;
 
