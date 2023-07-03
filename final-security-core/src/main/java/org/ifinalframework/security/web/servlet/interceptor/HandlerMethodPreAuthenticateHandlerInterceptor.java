@@ -15,7 +15,7 @@
 
 package org.ifinalframework.security.web.servlet.interceptor;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.util.Arrays;

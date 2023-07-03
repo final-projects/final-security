@@ -15,7 +15,7 @@
 
 package org.ifinalframework.security.authentication.event.listener;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 
 import org.springframework.context.ApplicationListener;
 import org.springframework.security.authentication.event.AuthenticationSuccessEvent;
