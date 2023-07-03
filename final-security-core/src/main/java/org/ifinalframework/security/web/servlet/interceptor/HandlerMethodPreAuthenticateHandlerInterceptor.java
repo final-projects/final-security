@@ -16,8 +16,8 @@
 package org.ifinalframework.security.web.servlet.interceptor;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
