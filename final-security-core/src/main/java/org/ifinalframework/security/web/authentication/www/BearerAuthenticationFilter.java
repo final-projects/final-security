@@ -22,6 +22,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Objects;
 
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -42,7 +44,8 @@ import lombok.extern.slf4j.Slf4j;
  * @since 1.4.0
  */
 @Slf4j
-@Component
+@Configuration
+@ConditionalOnBean(TokenAuthenticationService.class)
 public class BearerAuthenticationFilter extends OncePerRequestFilter {
     private final BearerAuthenticationConverter authenticationConverter;
     private final CookieAuthenticationConverter cookieAuthenticationConverter;

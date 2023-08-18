@@ -30,7 +30,7 @@ public class PasswordEncoderTest {
 
     @Test
     void test(){
-        System.out.println(PasswordEncoderFactories.createDelegatingPasswordEncoder().encode("root"));
+        System.out.println(PasswordEncoderFactories.createDelegatingPasswordEncoder().encode("feiyin"));
         System.out.println(NoOpPasswordEncoder.getInstance().encode("root"));
     }
 }

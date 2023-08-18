@@ -15,15 +15,16 @@
 
 package org.ifinalframework.security.authentication.event.listener;
 
-import jakarta.annotation.Resource;
-
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.context.ApplicationListener;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.event.AuthenticationSuccessEvent;
-import org.springframework.stereotype.Component;
 
 import org.ifinalframework.context.user.UserContextHolder;
 import org.ifinalframework.security.core.TokenUser;
 import org.ifinalframework.security.core.TokenUserAuthenticationService;
+
+import jakarta.annotation.Resource;
 
 /**
  * UserContextAuthenticationSuccessEventListener.
@@ -32,7 +33,8 @@ import org.ifinalframework.security.core.TokenUserAuthenticationService;
  * @version 1.5.0
  * @since 1.5.0
  */
-@Component
+@Configuration
+@ConditionalOnBean(TokenUserAuthenticationService.class)
 public class UserContextAuthenticationSuccessEventListener implements ApplicationListener<AuthenticationSuccessEvent> {
     @Resource
     private TokenUserAuthenticationService<? extends TokenUser> tokenUserAuthenticationService;
