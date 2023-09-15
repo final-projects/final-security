@@ -15,23 +15,24 @@
 
 package org.ifinalframework.security.web.authentication.www;
 
-import jakarta.servlet.FilterChain;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.Objects;
-
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import org.ifinalframework.context.user.UserContextHolder;
 import org.ifinalframework.security.core.TokenAuthenticationService;
+
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+import java.io.IOException;
+import java.util.Objects;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -46,6 +47,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Configuration
 @ConditionalOnBean(TokenAuthenticationService.class)
+@ConditionalOnProperty(prefix = "spring.security.bearer", name = "enable", havingValue = "true", matchIfMissing = true)
 public class BearerAuthenticationFilter extends OncePerRequestFilter {
     private final BearerAuthenticationConverter authenticationConverter;
     private final CookieAuthenticationConverter cookieAuthenticationConverter;
@@ -57,9 +59,9 @@ public class BearerAuthenticationFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws ServletException, IOException {
-//        if (SecurityContextHolder.getContext().getAuthentication() != null) {
-//            chain.doFilter(request, response);
-//        }
+        //        if (SecurityContextHolder.getContext().getAuthentication() != null) {
+        //            chain.doFilter(request, response);
+        //        }
         try {
             Authentication authentication = authenticationConverter.convert(request);
 
