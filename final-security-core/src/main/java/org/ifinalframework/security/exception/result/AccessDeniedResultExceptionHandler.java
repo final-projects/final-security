@@ -18,6 +18,9 @@ package org.ifinalframework.security.exception.result;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.lang.NonNull;
 import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.authentication.AuthenticationTrustResolver;
+import org.springframework.security.authentication.AuthenticationTrustResolverImpl;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
 import org.ifinalframework.context.exception.result.ResultExceptionHandler;
@@ -35,6 +38,8 @@ import org.ifinalframework.core.result.Result;
 @Component
 @ConditionalOnClass(AccessDeniedException.class)
 public class AccessDeniedResultExceptionHandler implements ResultExceptionHandler<AccessDeniedException> {
+    private final AuthenticationTrustResolver trustResolver = new AuthenticationTrustResolverImpl();
+
     @Override
     public boolean supports(@NonNull Throwable throwable) {
         return throwable instanceof AccessDeniedException;
@@ -43,6 +48,11 @@ public class AccessDeniedResultExceptionHandler implements ResultExceptionHandle
     @NonNull
     @Override
     public Result<?> handle(@NonNull AccessDeniedException throwable) {
+
+        if (trustResolver.isAnonymous(SecurityContextHolder.getContext().getAuthentication())) {
+            return R.failure(401, "未登录");
+        }
+
         return R.failure(ResponseStatus.FORBIDDEN.getCode(), throwable.getMessage());
     }
 }
