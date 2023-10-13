@@ -15,12 +15,6 @@
 
 package org.ifinalframework.security.core;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.stream.Collectors;
-
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.ApplicationContext;
@@ -32,9 +26,17 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.util.StringUtils;
 
 import org.ifinalframework.context.user.UserContextHolder;
 import org.ifinalframework.core.IUser;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 import lombok.Setter;
 
@@ -61,7 +63,7 @@ public class SimpleTokenUserAuthenticationService extends AbsTokenUserAuthentica
     public SimpleTokenUser user(Authentication authentication) {
         SimpleTokenUser user = new SimpleTokenUser();
         Object principal = authentication.getPrincipal();
-        if(principal instanceof IUser){
+        if (principal instanceof IUser) {
             IUser<?> iUser = (IUser<?>) principal;
             user.setName(iUser.getName());
             user.setId((Long) iUser.getId());
@@ -75,6 +77,10 @@ public class SimpleTokenUserAuthenticationService extends AbsTokenUserAuthentica
     public Authentication authenticate(SimpleTokenUser token) {
         List<String> roles = Optional.ofNullable(token.getRoles()).orElse(Collections.emptyList());
         List<SimpleGrantedAuthority> authorities = roles.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList());
+
+        if (!StringUtils.hasText(token.getUsername())) {
+            throw new UsernameNotFoundException("username is empty");
+        }
 
         if (Objects.nonNull(userDetailsService)) {
             UserDetails userDetails = userDetailsService.loadUserByUsername(token.getUsername());
