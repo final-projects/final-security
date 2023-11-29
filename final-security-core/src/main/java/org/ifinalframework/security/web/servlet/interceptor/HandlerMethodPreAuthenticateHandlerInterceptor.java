@@ -97,7 +97,7 @@ public class HandlerMethodPreAuthenticateHandlerInterceptor implements HandlerIn
         }
 
 
-        handlerMethodPreAuthenticate.authenticate((HandlerMethod) handler, HttpMethod.resolve(request.getMethod()), patternValues);
+        handlerMethodPreAuthenticate.authenticate((HandlerMethod) handler, HttpMethod.valueOf(request.getMethod()), patternValues);
 
         return HandlerInterceptor.super.preHandle(request, response, handler);
     }
