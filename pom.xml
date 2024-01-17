@@ -16,6 +16,9 @@
     <description>final-security</description>
     <modules>
         <module>final-security-core</module>
+        <module>final-security-sso-client</module>
+        <module>final-security-sso</module>
+        <module>final-security-sso-server</module>
     </modules>
     <properties>
         <java.version>17</java.version>
@@ -47,6 +50,10 @@
         <dependency>
             <groupId>org.ifinalframework.annotation</groupId>
             <artifactId>final-annotation-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-oauth2-jose</artifactId>
         </dependency>
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
@@ -112,6 +119,21 @@
             <dependency>
                 <groupId>org.ifinalframework.security</groupId>
                 <artifactId>final-security-core</artifactId>
+                <version>1.5.6-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.ifinalframework.security</groupId>
+                <artifactId>final-security-sso</artifactId>
+                <version>1.5.6-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.ifinalframework.security</groupId>
+                <artifactId>final-security-sso-server</artifactId>
+                <version>1.5.6-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.ifinalframework.security</groupId>
+                <artifactId>final-security-sso-client</artifactId>
                 <version>1.5.6-SNAPSHOT</version>
             </dependency>
         </dependencies>
