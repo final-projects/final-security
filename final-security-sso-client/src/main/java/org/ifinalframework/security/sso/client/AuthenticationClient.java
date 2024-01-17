@@ -26,7 +26,7 @@ import org.ifinalframework.core.result.Result;
  * @author mik
  * @since 1.5.6
  **/
-@FeignClient(url = "${feign.client.url:http://localhost:8080}")
+@FeignClient(name = "authentication-client",url = "${feign.client.url:http://localhost:8080}")
 public interface AuthenticationClient {
 
     @GetMapping("/api/sso/authentication")
