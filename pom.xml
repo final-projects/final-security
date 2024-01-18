@@ -16,6 +16,8 @@
     <description>final-security</description>
     <modules>
         <module>final-security-core</module>
+        <module>final-security-web</module>
+        <module>final-security-client</module>
         <module>final-security-sso-client</module>
         <module>final-security-sso</module>
         <module>final-security-sso-server</module>
@@ -25,16 +27,6 @@
         <final.version>1.5.6-SNAPSHOT</final.version>
     </properties>
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <optional>true</optional>
-            <scope>provided</scope>
-        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-oauth2-client</artifactId>
@@ -119,6 +111,11 @@
             <dependency>
                 <groupId>org.ifinalframework.security</groupId>
                 <artifactId>final-security-core</artifactId>
+                <version>1.5.6-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.ifinalframework.security</groupId>
+                <artifactId>final-security-web</artifactId>
                 <version>1.5.6-SNAPSHOT</version>
             </dependency>
             <dependency>
