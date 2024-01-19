@@ -28,7 +28,7 @@ import jakarta.servlet.http.HttpServletRequest;
  *     <li>{@link org.springframework.http.HttpHeaders#COOKIE}</li>
  * </ol>
  *
- * @author mik
+ * @author iimik
  * @since 1.5.6
  **/
 @FunctionalInterface

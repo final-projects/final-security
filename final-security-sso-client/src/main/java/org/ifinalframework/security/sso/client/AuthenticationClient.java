@@ -23,7 +23,7 @@ import org.ifinalframework.core.result.Result;
 /**
  * AuthenticationClient
  *
- * @author mik
+ * @author iimik
  * @since 1.5.6
  **/
 @FeignClient(name = "authentication-client",url = "${feign.client.url:http://localhost:8080}")

@@ -22,7 +22,7 @@ import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 /**
  * PasswordEncoderTest.
  *
- * @author ilikly
+ * @author iimik
  * @version 1.5.1
  * @since 1.5.1
  */

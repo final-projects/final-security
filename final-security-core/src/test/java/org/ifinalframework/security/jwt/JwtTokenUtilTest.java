@@ -28,7 +28,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * JwtTokenUtilTest.
  *
- * @author ilikly
+ * @author iimik
  * @version 1.3.3
  * @since 1.3.3
  */

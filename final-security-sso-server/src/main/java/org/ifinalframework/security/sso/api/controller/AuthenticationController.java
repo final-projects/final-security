@@ -32,7 +32,7 @@ import jakarta.annotation.Resource;
 /**
  * AuthenticationController
  *
- * @author mik
+ * @author iimik
  * @since 1.5.6
  **/
 @RestController

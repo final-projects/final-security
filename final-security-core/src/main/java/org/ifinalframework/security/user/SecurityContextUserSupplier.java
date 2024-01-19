@@ -28,7 +28,7 @@ import java.util.Objects;
 /**
  * SecurityContextUserSupplier.
  *
- * @author ilikly
+ * @author iimik
  * @version 1.4.1
  * @see SecurityContextHolder
  * @since 1.4.1

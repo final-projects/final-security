@@ -32,7 +32,7 @@ import org.ifinalframework.context.exception.UnauthorizedException;
 /**
  * PrePostAnnotationHandlerInterceptor.
  *
- * @author ilikly
+ * @author iimik
  * @version 1.4.0
  * @since 1.4.0
  */

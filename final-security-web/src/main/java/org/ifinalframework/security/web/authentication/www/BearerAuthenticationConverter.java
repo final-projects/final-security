@@ -31,7 +31,7 @@ import org.ifinalframework.security.core.TokenAuthenticationService;
 /**
  * BearerAuthenticationConverter.
  *
- * @author ilikly
+ * @author iimik
  * @version 1.4.0
  * @see org.springframework.security.web.authentication.www.BasicAuthenticationConverter
  * @since 1.4.0

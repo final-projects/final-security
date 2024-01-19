@@ -44,7 +44,7 @@ import java.util.stream.Collectors;
 /**
  * AuthenticationFilter
  *
- * @author mik
+ * @author iimik
  * @since 1.5.6
  **/
 @Component

@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * CookieRequestInterceptor
  *
- * @author mik
+ * @author iimik
  * @since 1.5.6
  **/
 @Component

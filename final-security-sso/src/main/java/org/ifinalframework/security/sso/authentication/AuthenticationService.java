@@ -21,7 +21,7 @@ import org.ifinalframework.core.IUser;
 /**
  * AuthenticationService
  *
- * @author mik
+ * @author iimik
  * @since 1.5.6
  **/
 @FunctionalInterface

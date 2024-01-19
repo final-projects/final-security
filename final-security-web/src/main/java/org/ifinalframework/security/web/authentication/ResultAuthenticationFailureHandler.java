@@ -34,7 +34,7 @@ import org.ifinalframework.json.Json;
 /**
  * ResultAuthenticationFailureHandler.
  *
- * @author ilikly
+ * @author iimik
  * @version 1.3.3
  * @since 1.3.3
  */

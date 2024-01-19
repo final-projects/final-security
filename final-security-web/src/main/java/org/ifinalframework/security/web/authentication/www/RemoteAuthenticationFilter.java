@@ -35,7 +35,7 @@ import lombok.RequiredArgsConstructor;
 /**
  * 远程认证过滤器，一般用于微服务，业务服务通过远程调用认证服务获取认证信息。
  *
- * @author mik
+ * @author iimik
  * @since 1.5.6
  **/
 @RequiredArgsConstructor

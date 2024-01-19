@@ -39,7 +39,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * BearerAuthenticationFilter.
  *
- * @author ilikly
+ * @author iimik
  * @version 1.4.0
  * @see org.springframework.security.web.authentication.www.BasicAuthenticationFilter
  * @since 1.4.0

@@ -22,7 +22,7 @@ import java.util.List;
 /**
  * Authentication
  *
- * @author mik
+ * @author iimik
  * @since 1.5.6
  **/
 public interface Authentication<U extends IUser<?>> {

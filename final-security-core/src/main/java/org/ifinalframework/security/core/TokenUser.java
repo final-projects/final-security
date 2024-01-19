@@ -22,7 +22,7 @@ import org.ifinalframework.core.IUser;
 /**
  * TokenUser.
  *
- * @author ilikly
+ * @author iimik
  * @version 1.3.3
  * @since 1.3.3
  */

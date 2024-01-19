@@ -21,7 +21,7 @@ import org.springframework.security.config.annotation.web.configurers.Expression
 /**
  * HttpSecurityConfigurer.
  *
- * @author ilikly
+ * @author iimik
  * @version 1.5.0
  * @since 1.5.0
  */

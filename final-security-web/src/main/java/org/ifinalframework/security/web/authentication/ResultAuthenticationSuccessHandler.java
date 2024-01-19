@@ -36,7 +36,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * ResultAuthenticationSuccessHandler.
  *
- * @author ilikly
+ * @author iimik
  * @version 1.3.3
  * @since 1.3.3
  */

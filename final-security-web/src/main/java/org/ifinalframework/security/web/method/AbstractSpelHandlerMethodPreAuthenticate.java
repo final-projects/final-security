@@ -32,7 +32,7 @@ import org.ifinalframework.context.exception.ForbiddenException;
 /**
  * SpelHandlerMethodPreAuthenticate.
  *
- * @author ilikly
+ * @author iimik
  * @version 1.5.0
  * @see org.springframework.security.access.prepost.PreAuthorize
  * @since 1.5.0

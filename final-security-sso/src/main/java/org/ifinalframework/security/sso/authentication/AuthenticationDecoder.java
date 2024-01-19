@@ -18,7 +18,7 @@ package org.ifinalframework.security.sso.authentication;
 /**
  * AuthenticationDecoder
  *
- * @author mik
+ * @author iimik
  * @since 1.5.6
  **/
 @FunctionalInterface

@@ -20,7 +20,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 /**
  * CurrentUser.
  *
- * @author ilikly
+ * @author iimik
  * @version 1.4.0
  * @since 1.4.0
  */
